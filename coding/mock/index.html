@@ -61,11 +61,9 @@
                 
                 fetch("http://localhost:3000/posts", {  
                 method: 'POST',  
-                //  headers: {  
-                // 'auth': '1234'  
-                //   },  
+               
                  body: JSON.stringify({
-                 book: book_name.textContent
+                 book: book_name.value
                 
                              })
                      })
