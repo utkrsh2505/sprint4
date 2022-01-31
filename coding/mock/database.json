@@ -1,19 +1,23 @@
 {
-    "posts": [
-      
-        {
-            "book": "Harry Potter",
-            "author": "JK Rowling",
-            "comments": ["Nice Book", "Epic Story"],
-            "id": 1
-        },
-        {
-            "book": "Harry Potter",
-            "author": "JK Rowling",
-            "comments": ["Nice Book", "Epic Story"],
-            "id": 2
-        }
-    ]
-    
+  "posts": [
+    {
+      "book": "Harry Potter",
+      "author": "JK Rowling",
+      "comments": [
+        "Nice Book",
+        "Epic Story"
+      ],
+      "id": 1
+    },
+    {
+      "book": "Harry ",
+      "author": "JK Rowling",
+      "comments": [
+        "Nice Book",
+        "Epic Story"
+      ],
+      "id": 2
+    }
    
-  }
+  ]
+}

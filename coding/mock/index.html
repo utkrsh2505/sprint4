@@ -5,14 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .item_box{
+            background-color: aquamarine;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border :1px solid black;
+        }
+        #user{
+            
+            background-color: burlywood;
+            padding: 50px;
+        }
+        #bookname{
+        width: 200PX;
+        margin: auto;
+           
+        }
+    </style>
+
 </head>
-Library
+
     <div id="main">
+        <div id="user">
+            <input  id="bookname" type=text placeholder="type"/>
+            <button id ="btn">Add</button>
+        </div>
         <div id="container"></div>
     </div>
 <body>
     <script type="module">
         import {display} from "./display.js";
+        let book_name = document.getElementById("bookname");
+        console.log(book_name.innerHTML);
+        let btn = document.getElementById("btn");
 
             fetch("http://localhost:3000/posts")
             .then((res)=>{
@@ -25,6 +55,35 @@ Library
             }).catch((err)=>{
                 console.log(err);
             })
+
+            const addDetail = ()=>{
+                console.log(book_name.innerText)
+                
+                fetch("http://localhost:3000/posts", {  
+                method: 'POST',  
+                //  headers: {  
+                // 'auth': '1234'  
+                //   },  
+                 body: JSON.stringify({
+                 book: book_name.textContent
+                
+                             })
+                     })
+            .then((res)=>{
+                return res.json();
+            })
+            .then((res)=>{
+               // console.log(res[0]);
+                display(res);
+
+            }).catch((err)=>{
+                console.log(err);
+            })
+
+
+            }
+
+            btn.addEventListener("click",addDetail);
         
        
     </script>
